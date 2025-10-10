@@ -9,6 +9,7 @@ run_more_models <-  FALSE
 library(ggplot2)
 library(palmerpenguins)
 # library(tidyverse) # DON'T LOAD THESE HUUGE PACKAGES FOR JUST ONE FUNCTION!
+library(dplyr)
 
 View(palmerpenguins::penguins)
 
