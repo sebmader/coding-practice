@@ -26,7 +26,8 @@
 
 # example code:
 
-get_data <- FALSE
+## config ##
+get_data <- TRUE
 use_raw_data <- TRUE
 
 
