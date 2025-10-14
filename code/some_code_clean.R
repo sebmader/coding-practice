@@ -13,7 +13,7 @@ library(dplyr)
 
 View(palmerpenguins::penguins)
 
-# NAs mess up the plotting an statistical analysis: remove them
+# NAs mess up the plotting and statistical analysis: remove them
 penguins_clean <- na.omit(palmerpenguins::penguins)
 
 # calculate flipper-body mass ratio as a proxy for swim speed
@@ -21,6 +21,10 @@ penguins_clean <- penguins_clean %>%
   dplyr::mutate(fl_bm_ratio = flipper_length_mm / (body_mass_g / 1000))
 
 View(penguins_clean)
+
+# inline testing example
+assert::assert(all(is.numeric(penguins_clean$fl_bm_ratio)))
+assert::assert(all(!is.infinite(penguins_clean$fl_bm_ratio)))
 
 # we are not interested in the bird's bill metrics right now: omit 
 penguins_subset <- penguins_clean %>%
@@ -107,6 +111,7 @@ if (run_more_models) {
 # - Stay within the margin: 80-100 characters a line. Otherwise it will be hard
 #   to read on smaller screens. 
 #   Trick for comments: Ctrl + Shift + # (or / depending on keyboard layout)
+#   --> reformats comment block to fit the margin
 # - Watch indentation and spacing of lines. It makes it so much easier to
 #   read, when you know can easily see the context of each line of code as a
 #   paragraph.
