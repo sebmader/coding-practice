@@ -25,7 +25,8 @@ ggplot(data= df.2, aes(x=species,y=fl.bm_ratio,color= sex)) +
 geom_boxplot() +
 stat_summary(fun.data =mean_se,geom="errorbar",colour= "darkgrey", width=0.1,size=0.8)+
 stat_summary(fun=mean,geom ="point",shape=23,fill ="red",colour="darkgrey", size =2) +
-labs(title="Flipper length-bodymass ratio of different species",x="Species",y="Flipper-body mass ratio [mm/kg]")+
+labs(
+  title="Flipper length-bodymass ratio of different species",x="Species",y="Flipper-body mass ratio [mm/kg]")+
   theme_bw()
 # Simple statistical analysis: Linear model
 model<-lm(fl.bm_ratio~species *sex,data=df.2)
@@ -35,7 +36,8 @@ df.2$predicted_fl.bm_ratio<-predict(model,newdata=df.2)
 # Second plot: Adding prediction
 ggplot(data= df.2,aes(x=species,y=fl.bm_ratio,color = sex)) +
   geom_boxplot() +
-labs(title="Flipper length-bodymass ratio of different species",x="Species",y="Flipper-body mass ratio [mm/kg]")+
+labs(title="Flipper length-bodymass ratio of different species",
+     x="Species",y="Flipper-body mass ratio [mm/kg]")+
   geom_point(aes(y =predicted_fl.bm_ratio),shape = 23, fill = "red", size =2) +
 labs(title="Predicted flipper length-bodymass ratios",x="Species",y="Flipper-body mass ratio [mm/kg]") +
   theme_bw()

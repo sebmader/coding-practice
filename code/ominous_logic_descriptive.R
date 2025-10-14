@@ -13,7 +13,7 @@ calculateEnhancedSum <- function(firstNumber, secondNumber) {
   return(modifiedSum)
 }
 
-# This dataset is generated to simulate different types of data distributions 
+# This dataset is generated to simulate different types of data distributions
 # that might be encountered in a statistical analysis context.
 dataSet <- data.frame(
   normalDistributedNumbers = rnorm(10),
