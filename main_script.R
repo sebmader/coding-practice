@@ -24,7 +24,7 @@
 # script should call all the code to create the results of the main body of the
 # manuscript from the data (preferably from the raw data).
 
-# placeholder code:
+# example code:
 
 get_data <- FALSE
 use_raw_data <- TRUE
